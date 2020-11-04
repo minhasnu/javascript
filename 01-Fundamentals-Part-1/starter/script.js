@@ -45,7 +45,7 @@ console.log(name + ' ' +lastName);
 
 /*****************
  * Basic Operators
- */
+ *
 ageJohn = 19;
 ageNick = 28;
  var now = 2020
@@ -62,3 +62,33 @@ var johnOlder = ageJohn > ageNick;
 console.log('is john older than nick' + johnOlder);
 
 //typeof Operators
+console.log('type of johnolder variable is ' + typeof johnOlder);
+
+if (typeof hello == 'undefined'){
+    console.log("check for undefined")
+}
+*/
+
+/*************
+ * Operator preceence
+ */
+
+ var now = 2018;
+ var yearJohn = 1989;
+ var fullAge = 18;
+//Multiple operator
+ var isFullAge = now - yearJohn >= fullAge;
+ console.log(isFullAge);
+
+//Grouping
+ var ageJohn = now - yearJohn;
+ var ageNick = 25;
+
+ avg = (ageJohn + ageNick) / 2;
+ console.log(avg);
+
+ //Multiple assignments
+ //Assignment operator works from left to the right
+ var x, y;
+ x = y = (3 + 8) * 2 + 3;
+console.log(x, y);
