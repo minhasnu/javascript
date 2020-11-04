@@ -71,7 +71,7 @@ if (typeof hello == 'undefined'){
 
 /*************
  * Operator preceence
- */
+ *
 
  var now = 2018;
  var yearJohn = 1989;
@@ -91,4 +91,73 @@ if (typeof hello == 'undefined'){
  //Assignment operator works from left to the right
  var x, y;
  x = y = (3 + 8) * 2 + 3;
-console.log(x, y);
+ console.log(x, y);
+
+//More operators
+ x = x + 10;
+ console.log(x);
+ x += 10;
+ console.log(x);
+ x++;
+ console.log(x);
+
+*/
+/************
+ * CODING CHALLENGE
+ */
+/****
+ * Compute mark and johns BMI and compare using a boolean variable
+ *
+
+ var wtJohn,wtMark,htJohn,htMark
+
+ var bmiJohn,bmiMark;
+
+ wtJohn = 55;
+ wtMark = 65;
+ htJohn = 1.75;
+ htMark = 1.55;
+
+ bmiJohn = wtJohn/(htJohn*htJohn);
+ bmiMark = wtMark/(htMark*htMark);
+
+ var johnHigher = bmiJohn > bmiMark;
+
+ console.log(' bmi of John and mark is '+bmiJohn+'  '+bmiMark);
+ console.log(' Is john\'s bmi bigger than mark\'s bmi? '+ johnHigher);
+ */
+
+ /******
+  * If else statements
+  *
+
+  var name = 'John';
+  var civilStatus = 'single';
+/// ==== means equal value and equal type
+  if (civilStatus === 'single') {
+      console.log(name + ' is merrier');
+  } else {
+      console.log(name + ' is married ');
+  }
+*/
+
+/*******
+ * Boolean logic
+ *
+var firstName = 'John';
+var age = 16;
+
+if (age < 13) {
+    console.log(firstName + ' is a boy');
+} else if (age >= 13 && age < 20 ) {
+    console.log(firstName + ' is a adolescent');
+} else {
+    console.log(firstName + ' is a man. ');
+}
+*/
+
+/*****************
+ * The ternanry operator and switch statements
+ */
+
+ var firstName = 'John';
