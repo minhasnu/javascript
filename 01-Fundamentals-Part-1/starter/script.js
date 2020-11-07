@@ -155,9 +155,152 @@ if (age < 13) {
     console.log(firstName + ' is a man. ');
 }
 */
+/*****
+ * Switch acting like and if else statement
+ *
+var age = 15;
+
+switch(true) {
+    case age < 13:
+        console.log('is a boy');
+        break;
+    case age >= 13 && age < 20:
+        console.log('is an teenager');
+        break;
+    default:
+        console.log('John is a man');
+}
+*/
+
 
 /*****************
  * The ternanry operator and switch statements
  */
 
  var firstName = 'John';
+ var age = 16;
+
+ age >= 18 ? console.log(firstName + " Drinks beer ") : console.log(firstName + " drinks juice ");
+ var drink = age >= 18 ? 'beer' : 'juice';
+
+ console.log(' drink for john ' + drink);
+
+ //switch
+/****
+ * 
+ * 
+ *
+ var job = 'instructor'
+
+ switch(job) { 
+    case 'teacher':
+    case 'instructor':
+        console.log('teaches kids');
+        break;
+    case 'police':
+        console.log('enforces law');
+        break;
+    case 'programmer':
+        console.log('writes code to solve problems');
+        break;
+    default:
+        console.log('do not know what he does')
+        
+    
+ }
+
+ var name = 'Minhas';
+
+ if(name || name === 0) {
+    console.log('Variable is defined');
+ }  else {
+    console.log('Variable is not defined');
+ }
+
+ //Equality operators
+var height = '23'
+if (height === 23){
+    console.log('same type and same value')
+} else {
+    console.log('not the same type')
+
+}
+*/
+
+/**************
+ * ARRAYS
+ * 
+ *
+
+ var names = ['john', 'letty', 'arsi'];
+ console.log(names);
+ console.log( typeof(names) );
+ console.log(names.length);
+
+names[names.length] = 'Maria'
+
+console.log(names)
+
+//Different data types and methods in arrays
+
+var names = ['minnu','mechu',25 ,26];
+console.log(names);
+
+names.push('hello');
+console.log(names);
+names.unshift('muhsin');
+console.log(names);
+names.pop()
+names.shift();
+console.log(names);
+
+console.log(names.indexOf(25));
+
+isMember = names.indexOf(25) === -1 ? 'is not present in the array' : 'is in the array';
+
+console.log(isMember);
+
+*/
+
+var bill, tip, totalBill;
+bill = [124, 48, 268];
+tip = [];
+totalBill = [];
+
+var percentage;
+
+function tipCalculator(bill){
+    switch(true){
+        case bill < 50:
+            percentage = 0.2;
+            break;
+        case bill >= 50 && bill < 200:
+            percentage = 0.15;
+            break;
+        case bill > 200:
+            percentage = 0.1;
+            break;        
+    }
+
+    return bill*percentage;
+}
+
+tip = [
+    tipCalculator(bill[0]),
+    tipCalculator(bill[1]), 
+    tipCalculator(bill[2])
+ 
+];
+
+finalValue = [
+    tip[0]+bill[0],
+    tip[1]+bill[1],
+    tip[2]+bill[2],
+];
+console.log(tip+'  '+ finalValue);
+
+/**************
+ * 
+ * Objects and properties
+ * 
+ */
