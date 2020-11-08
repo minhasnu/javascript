@@ -175,7 +175,7 @@ switch(true) {
 
 /*****************
  * The ternanry operator and switch statements
- */
+ *
 
  var firstName = 'John';
  var age = 16;
@@ -261,7 +261,9 @@ isMember = names.indexOf(25) === -1 ? 'is not present in the array' : 'is in the
 console.log(isMember);
 
 */
-
+/*****
+ * Coding Challenge
+ */
 var bill, tip, totalBill;
 bill = [124, 48, 268];
 tip = [];
@@ -304,3 +306,14 @@ console.log(tip+'  '+ finalValue);
  * Objects and properties
  * 
  */
+
+ var john = {
+    firstName :  'john',
+    lastName : 'smith',
+    birthyear : '1980',
+    family : ['Jane', 'Mark', 'Mechu', 'muhsin' ],
+    job : 'teacher',
+    isMarried : false
+ };
+ console.log(john.lastName);
+
