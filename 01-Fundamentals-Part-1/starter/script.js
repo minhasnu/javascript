@@ -263,7 +263,7 @@ console.log(isMember);
 */
 /*****
  * Coding Challenge
- */
+ *
 var bill, tip, totalBill;
 bill = [124, 48, 268];
 tip = [];
@@ -300,20 +300,184 @@ finalValue = [
     tip[2]+bill[2],
 ];
 console.log(tip+'  '+ finalValue);
-
+*/
 /**************
  * 
  * Objects and properties
  * 
  */
 
- var john = {
+ //Object literal
+ /***
+  * 
+  *
+var john = {
     firstName :  'john',
     lastName : 'smith',
-    birthyear : '1980',
+    birthYear : '1980',
     family : ['Jane', 'Mark', 'Mechu', 'muhsin' ],
     job : 'teacher',
     isMarried : false
- };
- console.log(john.lastName);
+};
+console.log(john.lastName);
+john.job =  'driver';
+var x = 'birthYear'
+john[x] = 1995;
+console.log(john);
+console.log(john['isMarried']);
 
+// new Object syntax
+var jane = new Object();
+jane.firstName =  'jane';
+jane.birthYear = '1996';
+jane.isMarried = false;
+console.log(jane)
+*/
+/*
+var john = {
+    firstName : 'john',
+    birthYear : 1995,
+    calcAge: function(){
+        this.age =  2020 - this.birthYear;
+    }
+};
+john.calcAge();
+console.log(john);
+*
+var John = {
+    height : 1.75,
+    mass : 55,
+    calcBmi : function(){
+        this.bmi = this.mass / this.height^2;
+        return this.bmi;
+    }
+}
+var Mark = {
+    height : 1.8,
+    mass : 70,
+    calcBmi : function(){
+        this.bmi = this.mass / this.height^2;
+        return this.bmi;
+    }
+}
+var x = John.calcBmi();
+Mark.calcBmi();
+console.log(John.bmi + ' ' + Mark.bmi);
+
+var isJohnBmiHigher = John.bmi > Mark.bmi;
+
+console.log('is John\'s bmi higer than mark\'s bmi  '+ isJohnBmiHigher);
+console.log(x);
+*/
+/*****
+ * Coding challenge
+ *
+
+var food = {
+    bill : [100, 200, 25, 180, 42],
+    tip : [],
+    totalBill : [],
+    calcTip : function(){
+        for(i=0; i<this.bill.length; i++) {
+            var percentage;
+            switch(true){
+                case this.bill[i] < 50:
+                    percentage = 0.2;
+                    break;
+                case this.bill[i] >=50 && this.bill[i] < 200:
+                    percentage = 0.15;
+                    break;
+                case this.bill[i] > 200:
+                    percentage = 0.1;
+                    
+            }
+            this.tip[i]=this.bill[i]*percentage;
+            this.totalBill[i] = this.tip[i] + this.bill[i]
+        }
+   
+        return this.tip
+        
+    },
+    
+}
+console.log(food.bill);
+food.calcTip();
+console.log(food.tip);
+console.log('Total bill array  : ' + food.totalBill);
+*/
+
+/******
+ * continue and break
+ *
+
+
+var list = ['John','Wick',1989,'dog'];
+console.log(list);
+console.log('break statement');
+
+
+for (var i = 0; i < list.length; i++) {
+    if(typeof(list[i])!== 'string') break;
+
+console.log(list[i])
+}
+console.log('continue statement');
+
+for (var i = 0; i < list.length; i++) {
+if(typeof(list[i])!== 'string') continue;
+
+console.log(list[i])
+}
+*/
+
+/********
+ * Hoisting
+ *
+var year = 1990;
+console.log(calcAge(year));
+
+function calcAge(year){
+    var age = 2020 - year;
+    return age;
+
+}
+// console.log(retirement(1995));
+
+
+var retirement = function calcRetirement(year){
+    var age = 65 - (2020 - year);
+    return age;
+}
+console.log(retirement(1995));
+console.log(typeof(retirement));
+console.log(typeof(calcAge));
+
+
+
+console.log(six);
+var six = 69;
+console.log(six);
+*/
+/****
+ * SCOPING of variables
+ */
+
+var a = 'HI ';
+first();
+function first(){
+    var b = 'hello ';
+    second();
+        function second(){
+            var c = 'bye ';
+            console.log(a + b + c);
+        }
+}
+
+first();
+third();
+function third(){
+    var d = 'john';
+    console.log(a+d);
+}
+
+// second();
