@@ -460,7 +460,7 @@ console.log(six);
 */
 /****
  * SCOPING of variables
- */
+ *
 
 var a = 'HI ';
 first();
@@ -469,15 +469,36 @@ function first(){
     second();
         function second(){
             var c = 'bye ';
+            third();
             console.log(a + b + c);
         }
 }
 
-first();
-third();
+
+
 function third(){
     var d = 'john';
     console.log(a+d);
 }
 
 // second();
+*/
+
+var a = 'HI ';
+first();
+function first(){
+    var b = 'hello ';
+
+    second();
+        function second(){
+            var c = 'bye ';
+            this.b = 'fuck ';
+            this.a = 'i am global '
+
+            console.log(a + b + c);
+        }
+}
+console.log(b);
+
+this.closed = true;
+console.log(this);
