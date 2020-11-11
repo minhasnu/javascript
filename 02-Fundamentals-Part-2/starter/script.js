@@ -31,5 +31,6 @@ var mike = {
 }
 
 mike.calculateAge = minhas.calculateAge;
+//function is treated as a variable
 mike.calculateAge();
 console.log(mike.age);
