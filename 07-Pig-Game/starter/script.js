@@ -1,42 +1,36 @@
 'use strict';
-var scores, roundScore,activePlayer,dice;
-
-init()
-
-
-
-
+var scores, roundScore,activePlayer,dice,gamePlaying;
+init();
 document.querySelector('#current--'+activePlayer).textContent = dice;
 //document.querySelector('#current--'+activePlayer).innerHTML = '<em>' + dice + '</em>';
-
-
-
-
 // document.querySelector('.btn--roll').style.display = 'none';
 
 document.querySelector('.btn--roll').addEventListener('click', function () {
 
-    //get a random number
-    var dice = Math.floor(Math.random()*6) + 1;
+    if(gamePlaying){
+         //get a random number
+        var dice = Math.floor(Math.random()*6) + 1;
 
-    //display the number on the dice
-    var diceDOM = document.querySelector('.dice');
-    diceDOM.style.display = 'block';
-    diceDOM.src = 'dice-' + dice + '.png';
+        //display the number on the dice
+        var diceDOM = document.querySelector('.dice');
+        diceDOM.style.display = 'block';
+        diceDOM.src = 'dice-' + dice + '.png';
 
-    // add the number to the score if the number is not 1
+        // add the number to the score if the number is not 1
 
-    if (dice !== 1) {
-        //add value and active player remains the same
-        roundScore += dice;
-        document.getElementById('current--'+activePlayer).textContent = roundScore;
+        if (dice !== 1) {
+            //add value and active player remains the same
+            roundScore += dice;
+            document.getElementById('current--'+activePlayer).textContent = roundScore;
 
-    } else {
-        // current score becomes zero and then the player is toggled
-        nextPlayer();
-  
+        } else {
+            // current score becomes zero and then the player is toggled
+            nextPlayer();        
+        }
         
+
     }
+   
 });
 
 document.querySelector('.btn--hold').addEventListener('click',function() {
@@ -55,12 +49,13 @@ document.querySelector('.btn--hold').addEventListener('click',function() {
         document.getElementById('current--1').textContent = '0';
         document.getElementById('current--0').textContent = '0';
 
+        gamePlaying = false;
+
+
     } else {
         nextPlayer();
 
     }
-
-  
 });
 
 document.querySelector('.btn--new').addEventListener('click', init);
@@ -75,6 +70,10 @@ function init() {
     document.getElementById('score--1').textContent = '0';
     document.getElementById('current--1').textContent = '0';
     document.getElementById('current--0').textContent = '0';
+    document.getElementById('name--0').textContent = 'Player 1';
+    document.getElementById('name--1').textContent = 'Player 2';
+    gamePlaying = true;
+
 
 }
 
